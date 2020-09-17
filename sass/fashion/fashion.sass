@@ -1,0 +1,35 @@
+@import "mixins"
+
+.page-title
+  position: absolute
+  top: 0
+  left: 0
+  @include transform(translateY(-100%))
+  width: 300px
+  height: 300px
+  z-index: 101
+  svg
+    border: 1px solid #000
+    opacity: .15
+  div
+    position: relative
+    height: 100%
+    h1
+      position: absolute
+      top: 50%
+      left: 50%
+      z-index: 102
+      @include transform(translate(-50%, -60%))
+
+.page-title.mobile
+  display: none
+
+.gallery
+  margin-top: 300px
+  .container
+    grid-template-columns: repeat(4, 1fr)
+  .post-1, .post-3
+    h3
+      color: #000
+
+@import "media"
